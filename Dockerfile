@@ -10,6 +10,8 @@ RUN set -x && \
     apt-get purge -y --auto-remove ca-certificates wget
 
 ADD ["galera/", "/opt/galera/"]
+ADD ["galera/galera.cnf", "/etc/mysql/conf.d/"]
+ADD ["galera/mariadb.cnf", "/etc/mysql/conf.d/"]
 
 RUN set -x && \
     cd /opt/galera && chmod +x on-start.sh galera-recovery.sh
